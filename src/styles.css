@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #2c3e50; /* Soothing light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #d9dee4;
+  }
+  
+  /* Controls Container */
+  .controls-container {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  /* Controls Styling */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .controls label {
+    font-weight: 500;
+    color: #e9ebed;
+  }
+  
+  /* Styled Select Dropdown */
+  .controls select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #3498db;
+    background-color: #f0f8ff;
+    color: #2c3e50;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover Effect for Select Dropdown */
+  .controls select:hover {
+    background-color: #e6f2ff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .controls select:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 6px rgba(41, 128, 185, 0.5);
+  }
+  
+  /* Disabled State for Select Dropdown */
+  .controls select:disabled {
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Speed Slider and Button Styles */
+  .speed-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .speed-label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  input[type='range']:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .reset-button,
+  .visualize-button {
+    margin: 0 10px 0 10px;
+    padding: 10px 20px;
+    background-color: #3498db; /* Base color for Visualize button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover Effect for Visualize Button */
+  .visualize-button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+  }
+  
+  .visualize-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  /* Chessboard */
+  .board {
+    display: grid;
+    gap: 1px;
+    width: 80vh;
+    height: 80vh;
+    border: 5px solid #2c3e50;
+    border-radius: 10px;
+    background-color: #2c3e50;
+    box-shadow: 0 20px 30px rgba(251, 251, 251, 1); /* Subtle shadow effect */
+  }
+  
+  .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Chessboard Pattern */
+  .cell.black {
+    background-color: #2c3e50;
+  }
+  
+  .cell.white {
+    background-color: #f0f0f0;
+  }
+  .cell.queen::after {
+    content: '♛';
+    font-size: 2.5rem;
+    color: #e74c3c;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cell.final.queen::after {
+    color: #27ae60 !important;
+  }
+  
